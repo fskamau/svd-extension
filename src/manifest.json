@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "v-Micro",
   "short_name": "get-em-all",
-  "version": "1",
+  "version": "1.0",
   "description": "idk",
   "icons": {
     "16": "icons/icon-16.png",
@@ -10,7 +10,8 @@
     "128": "icons/icon-128.png"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   },
   "browser_action": {
     "default_title": "gt",
@@ -23,7 +24,14 @@
       "run_at": "document_start"
     }
   ],
-  "permissions": ["activeTab", "tabs", "webRequest", "webNavigation", "webRequestBlocking", "http://*/*", "https://*/*"],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "webNavigation",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
   "browser_specific_settings": {
     "gecko": {
       "id": "extension@xScruffer.github.com"
@@ -32,12 +40,18 @@
   "commands": {
     "toggleOverlay": {
       "suggested_key": {
+        "default": "Alt+Comma",
+        "mac": "Command+Comma",
+        "windows": "Alt+Comma",
         "linux": "Alt+Comma"
       },
       "description": "V-micro Toggle overlay div"
     },
     "toggleVideosContentVisibility": {
       "suggested_key": {
+        "default": "Alt+N",
+        "mac": "Command+N",
+        "windows": "Alt+N",
         "linux": "Alt+N"
       },
       "description": "V-micro shortcut if you do not want to press popup"
